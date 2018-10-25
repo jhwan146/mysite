@@ -1,0 +1,15 @@
+<ul>
+{% for q in question %}
+    <li>
+        <!--<a href="{{ q.id }}">     &lt;!&ndash; 상대경로 === 현재경로 + 입력된 경로  polls에서 클릭하면 polls/1/detail로 이동 &ndash;&gt;-->
+        <a href="{% url 'detail' q.id %}">
+        {{ q.question_text }}
+    <!--#question_text from models.pyu-->
+        </a>
+    </li>
+{% endfor %}
+</ul>
+
+
+
+<!--url.py의 detail과 연결-->

@@ -1,0 +1,18 @@
+
+{{ item.question_text }}<br>
+{{ item.pub_date }}<br>
+
+{{ item.choice_set.all }}
+<!--{% for c in item.choice_set.all %}-->
+    <!--<input type="radio">-->
+    <!--{{ c.choice_text}}-->
+<!--{% endfor %}-->
+
+
+<form action = "vote/" method = "post">
+   {% for c in item.choice_set.all %}
+    <input type="radio" name="choice" value="{{ c.id }}">{{ c.choice_text }}
+{% endfor %}
+    {% csrf_token %}    <!-- 보안 조치-->
+    <input type="submit" value="투표">
+</form>

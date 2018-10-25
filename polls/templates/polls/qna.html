@@ -1,0 +1,20 @@
+'질문 받는다'
+
+<!--<form action = "polls/" method = "post">-->
+   <!--{% for c in item.choice_set.all %}-->
+    <!--<input type="submit" name="text" value="제출">{{ c.choice_text }}-->
+<!--{% endfor %}-->
+    <!--{% csrf_token %}    &lt;!&ndash; 보안 조치&ndash;&gt;-->
+    <!--<input type="submit" value="제출">-->
+<!--</form>-->
+
+<br><br><br><br>
+
+<!--상대경로-->
+<form action="add_question" method="post">
+                <!--../question-->
+    질문: <input type="text" name="text">
+    <br><br><br>
+    {% csrf_token %}
+    <input type="submit">
+</form>
